@@ -23,6 +23,6 @@ def analyze_object(obj: object) -> None:
         print(f"- {attr}: {type(value)}")
 
 
-obj: MyClass = MyClass("World")
+obj = MyClass("World")
 
 analyze_object(obj)
