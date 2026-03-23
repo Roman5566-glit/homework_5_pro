@@ -1,24 +1,24 @@
-def create_class(class_name, methods):
+def create_class(class_name: str, methods: dict) -> type:
     """Dynamically create a class with methods"""
     return type(class_name, (), methods)
 
 
-def say_hello(self):
+def say_hello(self) -> str:
     """Return hello string"""
     return "Hello!"
 
 
-def say_goodbye(self):
+def say_goodbye(self) -> str:
     """Return goodbye string"""
     return "Goodbye!"
 
 
-methods = {
+methods: dict = {
     "say_hello": say_hello,
     "say_goodbye": say_goodbye
 }
 
-MyDynamicClass = create_class("MyDynamicClass", methods)
+MyDynamicClass: type = create_class("MyDynamicClass", methods)
 
 obj = MyDynamicClass()
 print(obj.say_hello())

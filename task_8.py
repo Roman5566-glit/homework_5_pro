@@ -1,4 +1,4 @@
-def analyze_inheritance(cls):
+def analyze_inheritance(cls) -> None:
     """Identify and print methods inherited from parent classes"""
     print(f"Клас {cls.__name__} наслідує:")
 
@@ -15,7 +15,7 @@ def analyze_inheritance(cls):
 class Parent:
     """Base class with a sample method."""
 
-    def parent_method(self):
+    def parent_method(self) -> None:
         """Placeholder parent method"""
         pass
 
@@ -23,7 +23,7 @@ class Parent:
 class Child(Parent):
     """Subclass with a sample method"""
 
-    def child_method(self):
+    def child_method(self) -> None:
         """Placeholder child method"""
         pass
 

@@ -1,10 +1,10 @@
 class TypeCheckedMeta(type):
     """Metaclass that enforces type hints during attribute assignment"""
 
-    def __new__(mcs, name, bases, dct):
+    def __new__(mcs, name, bases, dct) -> type:
         """Inject a type-checking __setattr__ into the class"""
 
-        def __setattr__(self, key, value):
+        def __setattr__(self, key, value) -> None:
             """Validate value type against class annotations before setting"""
             annotations = getattr(self, '__annotations__', {})
 

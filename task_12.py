@@ -1,15 +1,15 @@
 class LoggingMeta(type):
     """Metaclass that logs attribute access and modification"""
 
-    def __new__(mcs, name, bases, dct):
+    def __new__(mcs, name, bases, dct) -> type:
         """Inject logging methods into the class dictionary"""
 
-        def __getattribute__(self, item):
+        def __getattribute__(self, item) -> object:
             """Log attribute access"""
             print(f"Logging: accessed '{item}'")
             return object.__getattribute__(self, item)
 
-        def __setattr__(self, item, value):
+        def __setattr__(self, item, value) -> None:
             """Log attribute modification"""
             print(f"Logging: modified '{item}'")
             return object.__setattr__(self, item, value)
@@ -23,7 +23,7 @@ class LoggingMeta(type):
 class MyClass(metaclass=LoggingMeta):
     """Class with automatic attribute logging"""
 
-    def __init__(self, name):
+    def __init__(self, name) -> None:
         """Initialize with a name"""
         self.name = name
 

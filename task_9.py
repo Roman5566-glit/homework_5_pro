@@ -1,19 +1,19 @@
 class DynamicProperties:
     """Manage dynamic properties using class-level descriptors"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize value storage"""
         self._values = {}
 
-    def add_property(self, name, default_value):
+    def add_property(self, name, default_value) -> None:
         """Dynamically add a property with getter and setter"""
         self._values[name] = default_value
 
-        def getter(instance):
+        def getter(instance) -> object:
             """Return the property value"""
             return instance._values[name]
 
-        def setter(instance, value):
+        def setter(instance, value) -> None:
             """Set the property value"""
             instance._values[name] = value
 

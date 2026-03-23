@@ -1,7 +1,7 @@
 class LimitedAttributesMeta(type):
     """Metaclass to limit the number of public class attributes"""
 
-    def __new__(mcs, name, bases, dct):
+    def __new__(mcs: type, name: str, bases: tuple[type], dct: dict[str, object]):
         """Enforce a maximum of 3 public attributes during class creation"""
         count = 0
         for key in dct:

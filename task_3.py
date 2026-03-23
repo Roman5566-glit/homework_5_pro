@@ -2,7 +2,7 @@ import inspect
 import importlib
 
 
-def analyze_module(module_name):
+def analyze_module(module_name: str) -> None:
     """Import and list built-in functions of a module"""
     module = importlib.import_module(module_name)
 
